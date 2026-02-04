@@ -36,6 +36,7 @@ export default function App() {
       alignItems: "center", 
       justifyContent: "center", 
       height: "100vh", 
+      width: "100%",
       margin: 0,
       fontFamily: "Arial, sans-serif", 
       textAlign: "center", 
@@ -43,8 +44,11 @@ export default function App() {
     }}>
       {yesPressed ? (
         <>
-          <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Srećni medvedići" />
-          <h1 style={{ fontSize: "2.5rem", color: "#e11d48", marginTop: "20px" }}>
+          <img 
+            src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" 
+            alt="Srećni medvedići" 
+          />
+          <h1 style={{ fontSize: "2.5rem", color: "#e11d48", marginTop: "20px", padding: "0 20px" }}>
             TOOOO! Znao sam! (Nisi Mleko u kesi) ❤️<br/>Vidimo se 14-og! ;)
           </h1>
         </>
@@ -55,7 +59,7 @@ export default function App() {
             src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
             alt="Medvedić sa ružama"
           />
-          <h1 style={{ fontSize: "2.2rem", color: "#e11d48", margin: "25px 0" }}>
+          <h1 style={{ fontSize: "2.2rem", color: "#e11d48", margin: "25px 0", padding: "0 20px" }}>
             Hoćeš li biti moja Valentine? 🌹
           </h1>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "15px", flexWrap: "wrap" }}>
@@ -68,8 +72,7 @@ export default function App() {
                 padding: "12px 24px", 
                 borderRadius: "8px", 
                 cursor: "pointer", 
-                fontWeight: "bold",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
+                fontWeight: "bold"
               }}
               onClick={() => setYesPressed(true)}
             >
@@ -84,8 +87,7 @@ export default function App() {
                 padding: "12px 24px", 
                 borderRadius: "8px", 
                 cursor: "pointer", 
-                fontWeight: "bold",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
+                fontWeight: "bold"
               }}
             >
               {noCount === 0 ? "Ne" : getNoButtonText()}
