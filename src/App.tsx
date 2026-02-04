@@ -1,7 +1,6 @@
-"use client";
 import { useState } from "react";
 
-export default function Page() {
+export default function App() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
   const yesButtonSize = noCount * 20 + 16;
@@ -10,56 +9,53 @@ export default function Page() {
     setNoCount(noCount + 1);
   };
 
-  const getNoButtonText = () => {
-    const phrases = [
-      "NE",
-      "UA?",
-      "BUDJAVO?",
-      "MLEKO U KESI",
-      "UAUA",
-      "DON BOSS",
-      "PROFI DK",
-      "EJ",
-      "DOSTA",
-      "PREMIUM SI VEHABIJA",
-      "FUCK OFF",
-      "NEEE",
-      ":((((",
-      "BUDJAVKO",
-      "GREJNO TELO",
-      "No :(",
-    ];
+  const phrases = [
+    "Ne",
+    "Jesi li sigurna? 🤨",
+    "Razmisli još jednom...",
+    "MLEKO SI U KESI",
+    "UA",
+    "BUDJAVO",
+    "Srce mi puca... :*(",
+    "Evo umirem",
+    "Gotovo, mrtav sam",
+    "Sada pričaš sa mojim duhom 👻",
+    "Daj nemoj biti takva",
+    ":((((",
+    "KLIKNI DA MOLIM TE",
+    "Nemaš izbora sad već",
+    "No :(",
+  ];
 
-    return phrases[Math.min(noCount, phrases.length - 1)];
-  };
+  const getNoButtonText = () => phrases[Math.min(noCount, phrases.length - 1)];
 
   return (
-    <div className="-mt-16 flex h-screen flex-col items-center justify-center">
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", fontFamily: "sans-serif", textAlign: "center", padding: "20px" }}>
       {yesPressed ? (
         <>
-          <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
-          <div className="my-4 text-4xl font-bold">WOOOOOO!!! I love you pookie!! ;))</div>
+          <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="bear-kiss" />
+          <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>TOOOO! Znao sam(Nisi Mleko u kesi)! ❤️<br/>Vidimo se 14-og! ;)</h1>
         </>
       ) : (
         <>
           <img
-            className="h-[200px]"
+            style={{ height: "200px" }}
             src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
+            alt="cute-bear"
           />
-          <h1 className="my-4 text-4xl">Will you be my Valentine?</h1>
-          <div className="flex items-center">
+          <h1 style={{ fontSize: "2rem", margin: "20px 0" }}>Hoćeš li biti moja Valentine? 🌹</h1>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <button
-              className={`mr-4 rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700`}
-              style={{ fontSize: yesButtonSize }}
+              style={{ fontSize: `${yesButtonSize}px`, backgroundColor: "#22c55e", color: "white", border: "none", padding: "10px 20px", borderRadius: "5px", cursor: "pointer", fontWeight: "bold" }}
               onClick={() => setYesPressed(true)}
             >
-              Yes
+              DA
             </button>
             <button
               onClick={handleNoClick}
-              className=" rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
+              style={{ backgroundColor: "#ef4444", color: "white", border: "none", padding: "10px 20px", borderRadius: "5px", cursor: "pointer", fontWeight: "bold" }}
             >
-              {noCount === 0 ? "No" : getNoButtonText()}
+              {noCount === 0 ? "Ne" : getNoButtonText()}
             </button>
           </div>
         </>
